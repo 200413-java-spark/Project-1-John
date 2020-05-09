@@ -1,6 +1,5 @@
 package com.github.johnmedlockdev.project1john.controllers;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -39,12 +38,23 @@ public class FileUploadController {
         Path path = Paths.get("C:\\Storage\\");
 
         Stream<Path> subPaths = Files.walk(path, 1);
-		List<String> subPathList = subPaths.filter(Files::isRegularFile)
-				.map(Objects::toString).collect(Collectors.toList());
+        List<String> subPathList = subPaths.filter(Files::isRegularFile)
+                .map(Objects::toString).collect(Collectors.toList());
 
 
-		//		System.out.println(subPathList);
+        //		System.out.println(subPathList);
 //            subPaths.filter(Files::isRegularFile).forEach(System.out::println);
+
+//  output      [
+//        "C:\Storage\Binance.PNG",
+//        "C:\Storage\Capture.PNG",
+//        "C:\Storage\earnedvalue report.PNG",
+//        "C:\Storage\earnedvalue table.PNG",
+//        "C:\Storage\earnedvalue table2.PNG",
+//        "C:\Storage\Logo.png",
+//        "C:\Storage\Selfie.jpg",
+//        "C:\Storage\Selfie_250x250.jpg"
+//         ]
 
         return subPathList;
     }
