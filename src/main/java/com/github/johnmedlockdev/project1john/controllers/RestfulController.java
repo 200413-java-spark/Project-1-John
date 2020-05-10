@@ -1,5 +1,7 @@
 package com.github.johnmedlockdev.project1john.controllers;
 
+import com.github.johnmedlockdev.project1john.business.WordCountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,13 +13,19 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-public class FileUploadController {
+public class RestfulController {
+
+    @Autowired
+    WordCountService service;
+
     @RequestMapping(value = "/upload",
             method = RequestMethod.POST,
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -41,22 +49,16 @@ public class FileUploadController {
         List<String> subPathList = subPaths.filter(Files::isRegularFile)
                 .map(Objects::toString).collect(Collectors.toList());
 
-
         //		System.out.println(subPathList);
 //            subPaths.filter(Files::isRegularFile).forEach(System.out::println);
 
-//  output      [
-//        "C:\Storage\Binance.PNG",
-//        "C:\Storage\Capture.PNG",
-//        "C:\Storage\earnedvalue report.PNG",
-//        "C:\Storage\earnedvalue table.PNG",
-//        "C:\Storage\earnedvalue table2.PNG",
-//        "C:\Storage\Logo.png",
-//        "C:\Storage\Selfie.jpg",
-//        "C:\Storage\Selfie_250x250.jpg"
-//         ]
-
         return subPathList;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/wordcount")
+    public Map<String, Long> count(@RequestParam(required = true) String words) {
+        List<String> wordList = Arrays.asList(words.split("\\|"));
+        return service.getCount(wordList);
     }
 
 }

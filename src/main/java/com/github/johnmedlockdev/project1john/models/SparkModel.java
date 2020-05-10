@@ -18,9 +18,11 @@ public class SparkModel {
         this.id = id;
         this.calculation = calculation;
     }
+
     public SparkModel(double calculation) {
         this.calculation = calculation;
     }
+
     protected SparkModel() {
     }
 
