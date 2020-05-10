@@ -134,3 +134,9 @@ buildNumber.properties
 .flattened-pom.xml
 
 # End of https://www.gitignore.io/api/java,maven,java-web,intellij
+.mvn/*
+mvnw
+mvnw.cmd
+HELP.md
+.mvn
+project-1-john.iml
