@@ -83,7 +83,11 @@ public class StaticController {
         for (Tuple2<Double, Integer> x : list) {
             repository.save(new SparkModel(x._1, x._2));
         }
+
+
         return new RedirectView("/graph");
+
+
     }
 }
 
