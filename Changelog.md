@@ -1,4 +1,17 @@
 # Changelog
+## Version 0.0.2
+
+### Added
+- route for spark
+- implemented RDD transformation 
+- created spark config file
+- form now supports numerous uploads
+
+### Changed
+- moved routes to StaticController
+
+### Removed
+- restful controller
 
 ## Version 0.0.1
 

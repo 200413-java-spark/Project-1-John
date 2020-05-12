@@ -13,7 +13,6 @@ public class SparkModel {
     private long id;
     private double calculation;
 
-
     public SparkModel(long id, double calculation) {
         this.id = id;
         this.calculation = calculation;
@@ -25,7 +24,6 @@ public class SparkModel {
 
     protected SparkModel() {
     }
-
 
     public long getId() {
         return id;
