@@ -39,8 +39,13 @@ public class StaticController {
         return "index";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public RedirectView fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
+    @RequestMapping(value = "/graph")
+    public String graph() {
+        return "graph";
+    }
+
+    @RequestMapping(value = "/graph", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public String fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
         File convertFile = new File("C:\\Storage\\" + file.getOriginalFilename());
 
         fileName = convertFile.toString();
@@ -50,11 +55,6 @@ public class StaticController {
         } catch (Exception exe) {
             exe.printStackTrace();
         }
-        return new RedirectView("spark");
-    }
-
-    @RequestMapping(value = "/spark")
-    public RedirectView spark() {
 
         JavaRDD<String> allRows = sc.textFile(fileName).persist(StorageLevel.MEMORY_ONLY());
 
@@ -63,12 +63,10 @@ public class StaticController {
         System.out.println(headers);
         String field = "Close";
 
-//      all the data minus headers
         JavaRDD<String> data = allRows.filter(
                 x -> !(x.split(",")[headers.indexOf(field)])
                         .equals(field));
 
-//      selects the column
         JavaRDD<Double> column = data.map(
                 x -> Double.valueOf(x.split(",")[headers.
                         indexOf(field)]));
@@ -83,11 +81,7 @@ public class StaticController {
         for (Tuple2<Double, Integer> x : list) {
             repository.save(new SparkModel(x._1, x._2));
         }
-
-
-        return new RedirectView("/graph");
-
-
+        return "graph";
     }
 }
 

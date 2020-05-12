@@ -14,7 +14,7 @@ public class RestfulController {
     @Autowired
     SparkRepository sparkRepository;
 
-    @GetMapping(path = "/graph")
+    @GetMapping(path = "/graphApi")
     public List<SparkModel> graphApi() {
         return sparkRepository.findAll();
 
