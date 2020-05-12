@@ -1,4 +1,16 @@
 # Changelog
+## Version 0.0.4
+
+### Added
+-  SparkProcess Class
+-  LoadFile Class
+- graph html file
+
+### Changed
+- refactored routes
+- broke up business logic
+
+### Removed
 ## Version 0.0.3
 
 ### Added
