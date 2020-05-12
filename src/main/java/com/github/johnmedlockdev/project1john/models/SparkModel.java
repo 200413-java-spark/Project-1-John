@@ -11,15 +11,14 @@ public class SparkModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private double calculation;
+    private int count;
+    private double price;
 
-    public SparkModel(long id, double calculation) {
-        this.id = id;
-        this.calculation = calculation;
-    }
 
-    public SparkModel(double calculation) {
-        this.calculation = calculation;
+    public SparkModel(double price, int count) {
+        this.count = count;
+        this.price = price;
+
     }
 
     protected SparkModel() {
@@ -33,11 +32,19 @@ public class SparkModel {
         this.id = id;
     }
 
-    public double getCalculation() {
-        return calculation;
+    public double getPrice() {
+        return price;
     }
 
-    public void setCalculation(double calculation) {
-        this.calculation = calculation;
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

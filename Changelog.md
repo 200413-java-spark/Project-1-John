@@ -1,4 +1,17 @@
 # Changelog
+## Version 0.0.3
+
+### Added
+- restful controller for json api
+- connected jpa to spark model
+- added route to graph
+
+### Changed
+- refactored SparkModel
+
+### Removed
+
+
 ## Version 0.0.2
 
 ### Added
