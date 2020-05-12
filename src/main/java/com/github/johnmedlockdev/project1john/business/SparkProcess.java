@@ -15,6 +15,7 @@ import java.util.List;
 
 @Component
 public class SparkProcess {
+
     @Autowired
     JavaSparkContext sc;
 
@@ -24,6 +25,12 @@ public class SparkProcess {
     public void spark(String filename) {
         JavaRDD<String> allRows = sc.textFile(filename).persist(StorageLevel.MEMORY_ONLY());
 
+        List<Tuple2<Double, Integer>> list = transformFilter(allRows).collect();
+
+        persistToDb(list);
+    }
+
+    private JavaPairRDD<Double, Integer> transformFilter(JavaRDD<String> allRows) {
         List<String> headers = Arrays.asList(allRows.take(1).get(0).split(","));
 
         String field = "Close";
@@ -40,9 +47,11 @@ public class SparkProcess {
 
         JavaPairRDD<Double, Integer> priceMap = ceil.mapToPair((f) -> new Tuple2<>(f, 1));
 
-        JavaPairRDD<Double, Integer> countValues = priceMap.reduceByKey((x, y) -> ((int) x + (int) y));
+        return priceMap.reduceByKey((x, y) -> ((int) x + (int) y));
 
-        List<Tuple2<Double, Integer>> list = countValues.collect();
+    }
+
+    private void persistToDb(List<Tuple2<Double, Integer>> list) {
         for (Tuple2<Double, Integer> x : list) {
             repository.save(new SparkModel(x._1, x._2));
         }

@@ -1,4 +1,9 @@
 # Changelog
+## Version 0.0.5
+
+### Changed
+-  refactored SparkProcess Class
+
 ## Version 0.0.4
 
 ### Added
