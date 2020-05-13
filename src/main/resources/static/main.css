@@ -1,0 +1,9 @@
+body {
+    background-color: #F5F5F5;
+}
+.form-control{
+    height: calc(1.5em + .75rem + 10px);
+}
+form {
+    margin-top: 25vh;
+}
