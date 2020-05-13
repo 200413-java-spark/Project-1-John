@@ -52,9 +52,7 @@ public class SparkProcess {
     }
 
     private void persistToDb(List<Tuple2<Double, Integer>> list) {
-        for (Tuple2<Double, Integer> x : list) {
-            repository.save(new SparkModel(x._1, x._2));
-        }
+        list.parallelStream().forEach(x -> repository.save(new SparkModel(x._1, x._2)));
     }
 
 }

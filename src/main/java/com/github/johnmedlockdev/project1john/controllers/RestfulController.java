@@ -17,6 +17,5 @@ public class RestfulController {
     @GetMapping(path = "/graphApi")
     public List<SparkModel> graphApi() {
         return sparkRepository.findAll();
-
     }
 }

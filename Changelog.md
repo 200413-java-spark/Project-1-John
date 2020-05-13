@@ -1,4 +1,9 @@
 # Changelog
+## Version 0.0.6
+
+### Changed
+-  optimized entry to database with parallelStream
+
 ## Version 0.0.5
 
 ### Changed
