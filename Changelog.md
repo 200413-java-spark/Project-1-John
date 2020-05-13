@@ -1,4 +1,17 @@
 # Changelog
+
+## Version 1.0.0
+
+### Added
+- d3 graph
+- connect restful api
+
+### Changed
+- moved main.js, and styles.css to root static folder
+
+### Removed
+- folders js,css for static content
+
 ## Version 0.0.6
 
 ### Changed
