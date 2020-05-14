@@ -8,9 +8,7 @@
 - improved file download with streams.
 - header to static content
 - js logic
-
-### Removed
-
+- updated readme documentation
 
 ## Version 1.0.0
 
@@ -57,9 +55,6 @@
 ### Changed
 - refactored SparkModel
 
-### Removed
-
-
 ## Version 0.0.2
 
 ### Added
@@ -85,7 +80,4 @@
 - static content
 - routes for upload, and directory traversal
 - logging
-### Changed
-
-### Removed
 

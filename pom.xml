@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.johnmedlockdev</groupId>
     <artifactId>project-1-john</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>project-1-john</name>
     <description>project-1-john</description>
