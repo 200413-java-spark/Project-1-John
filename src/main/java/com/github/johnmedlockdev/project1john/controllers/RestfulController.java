@@ -2,7 +2,6 @@ package com.github.johnmedlockdev.project1john.controllers;
 
 import com.github.johnmedlockdev.project1john.models.SparkModel;
 import com.github.johnmedlockdev.project1john.repositories.SparkRepository;
-import com.github.johnmedlockdev.project1john.utils.LoadFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

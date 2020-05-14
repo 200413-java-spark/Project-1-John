@@ -29,8 +29,6 @@ d3.json('http://localhost:8080/graphApi').then((data) => {
     })
 
 
-
-
     x.domain(data.map((d) => {
         return d.price
     })).padding(0.05);

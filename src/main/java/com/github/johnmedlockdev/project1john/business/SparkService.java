@@ -9,16 +9,16 @@ import org.apache.spark.storage.StorageLevel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import scala.Tuple2;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Component
-public class SparkProcess {
+@Service
+public class SparkService {
 
-    Logger logger = LoggerFactory.getLogger(SparkProcess.class);
+    Logger logger = LoggerFactory.getLogger(SparkService.class);
 
     @Autowired
     JavaSparkContext sc;

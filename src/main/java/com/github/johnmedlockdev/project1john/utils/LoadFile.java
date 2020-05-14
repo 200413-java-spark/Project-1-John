@@ -1,7 +1,6 @@
 package com.github.johnmedlockdev.project1john.utils;
 
-import com.github.johnmedlockdev.project1john.business.SparkProcess;
-import org.slf4j.ILoggerFactory;
+import com.github.johnmedlockdev.project1john.business.SparkService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,9 @@ import java.nio.file.Paths;
 public class LoadFile {
 
     Logger logger = LoggerFactory.getLogger(LoadFile.class);
+
     @Autowired
-    SparkProcess sparkProcess;
+    SparkService sparkService;
 
     public void process(MultipartFile multipartFile) {
         String name = multipartFile.getOriginalFilename();
@@ -30,6 +30,6 @@ public class LoadFile {
             logger.info("Something went wrong with io");
             ioException.printStackTrace();
         }
-        sparkProcess.init(fileName);
+        sparkService.init(fileName);
     }
 }

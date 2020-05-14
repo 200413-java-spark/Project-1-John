@@ -1,8 +1,5 @@
 package com.github.johnmedlockdev.project1john;
 
-import com.github.johnmedlockdev.project1john.controllers.StaticController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
