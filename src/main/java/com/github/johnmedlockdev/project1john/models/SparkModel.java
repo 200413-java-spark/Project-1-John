@@ -14,11 +14,9 @@ public class SparkModel {
     private int count;
     private double price;
 
-
     public SparkModel(double price, int count) {
         this.count = count;
         this.price = price;
-
     }
 
     protected SparkModel() {

@@ -11,11 +11,3 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 }
-
-
-// TODO: 5/13/2020 make tests
-
-
-// TODO: 5/13/2020 test jar -------------
-// TODO: 5/13/2020 script
-// TODO: 5/13/2020 powerpoint
