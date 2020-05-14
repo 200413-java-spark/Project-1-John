@@ -1,7 +1,7 @@
-const mVar = 45;
+const mVar = 60;
 const margin = {top: mVar, right: mVar, bottom: mVar, left: mVar};
-const width = window.innerWidth - margin.left - margin.right - mVar / 2;
-const height = window.innerHeight - margin.top - margin.bottom - mVar / 2;
+const width = window.innerWidth - margin.left - margin.right;
+const height = window.innerHeight - margin.top - (margin.bottom * 1.33);
 
 const svg = d3.select("#visualization")
     .append("svg")
@@ -16,35 +16,28 @@ const y = d3.scaleLinear().range([height, 0]);
 
 
 d3.json('http://localhost:8080/graphApi').then((data) => {
+    let numArr = [];
+    let total = 60;
+
+    for (let i = 0; i <= total; i++) {
+        numArr.push(i);
+    }
+
     data.forEach((d) => {
         d.price = +d.price;
         d.count = +d.count;
     })
 
+
+
+
     x.domain(data.map((d) => {
         return d.price
-    })).padding(0.1);
+    })).padding(0.05);
 
     y.domain([0, d3.max(data, (d) => {
         return d.count;
     })]);
-
-
-    svg.append('g')
-        .selectAll("dot")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("cx", (d) => {
-            return x(d.price);
-        })
-        .attr("width", x.bandwidth())
-        .attr("cy", (d) => {
-            return y(d.count)
-        })
-        .attr("height", (d) => {
-            return height - y(d.count)
-        })
 
     svg.selectAll(".bar")
         .data(data)
@@ -67,7 +60,7 @@ d3.json('http://localhost:8080/graphApi').then((data) => {
         .call(d3.axisBottom(x));
 
     svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.axisLeft(y).tickValues(numArr));
 
 
 }).catch((error) => {

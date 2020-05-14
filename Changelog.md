@@ -2,9 +2,12 @@
 ## Version 1.0.1
 
 ### Added
+- semantic logging
 
 ### Changed
 - improved file download with streams.
+- header to static content
+- js logic
 
 ### Removed
 

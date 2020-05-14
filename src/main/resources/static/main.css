@@ -1,7 +1,27 @@
-body, html {
+body {
     background-color: #F5F5F5;
-    height: 100%;
-    display: grid;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.btn-success {
+    background-color: #006B38FF;
+}
+
+.form-container {
+    margin: auto;
+    background:#f7f7f7;
+    padding-top:250px;
+}
+
+.navbar{
+    height: 60px;
+}
+.navbar-nav {
+    flex-direction: row;
+}
+
+li {
+    padding-left: 2em;
 }
 
 .form-control {
@@ -11,12 +31,3 @@ body, html {
 form {
     top: 25vh;
 }
-
-.btn-success {
-    background-color: #006B38FF;
-}
-
-.container {
-    margin: auto;
-}
-
