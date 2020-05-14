@@ -1,5 +1,6 @@
 package com.github.johnmedlockdev.project1john.controllers;
 
+import com.github.johnmedlockdev.project1john.repositories.SparkRepository;
 import com.github.johnmedlockdev.project1john.utils.LoadFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,8 +16,12 @@ public class StaticController {
     @Autowired
     LoadFile loadFile;
 
+    @Autowired
+    SparkRepository sparkRepository;
+
     @RequestMapping(value = "/")
     public String index() {
+        sparkRepository.deleteAll();
         return "index";
     }
 

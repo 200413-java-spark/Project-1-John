@@ -8,6 +8,7 @@
 
 ### Changed
 - moved main.js, and styles.css to root static folder
+- now index page drops the db for reuse
 
 ### Removed
 - folders js,css for static content

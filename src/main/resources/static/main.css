@@ -1,9 +1,20 @@
-body {
+body, html {
     background-color: #F5F5F5;
+    height: 100%;
+    display: grid;
 }
 .form-control{
     height: calc(1.5em + .75rem + 10px);
 }
 form {
-    margin-top: 25vh;
+    top: 25vh;
 }
+
+.btn-success {
+    background-color: #006B38FF;
+}
+
+.container{
+    margin: auto;
+}
+
