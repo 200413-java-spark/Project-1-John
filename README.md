@@ -1,6 +1,6 @@
 # Spark Stocks 1.0.1
 
-***Spark Stocks Is An ETL Batch Processor For Historic Ticker Data Served As Spring A Microservice.***
+***Spark Stocks Is An ETL Batch Processor For Historic Ticker Data Served As A Spring Microservice.***
 
 ***The Goal Of Spark Stocks Is To Identify Clusters Of Potential Support And Resistance Within The Dataset.***
 
@@ -37,14 +37,11 @@ http://localhost:8080/
 **Business Logic Layer:**
 - Java
 - Apache Spark
-- JUnit
 - Spring Boot
 - Spring MVC
 
 **Data Access Layer:**
-- Docker
 - PostgreSQL
-- AWS - EC2
 - Spring JPA
 - Spring Data
 
@@ -55,11 +52,17 @@ http://localhost:8080/
 - CSS
 - HTML
 
+**Build Tools:**
+- Maven
+- Docker
+- JUnit
+- Tomcat
+- AWS - EC2
 
 ### Main Algorithm
 
-- The User Uploads A CSV To A Form Styled With Bootstrap 4.
+- The User Uploads A CSV From Yahoo Finance To A Form Styled With Bootstrap 4.
 - The CSV Is Written To Disk On The Server.
-- Spark Reads The File Into Memory, Caches It, Filters The Header, Filters The Unnecessary Columns, Rounds Off All The ‘close’ Values Within The Dataset, And Finally Combines The Values Into Key-value Pairs.
+- Spark Reads The File Into Memory, Caches It, Filters The Header, Filters The Unnecessary Columns, Rounds Off All The ‘Close’ Values Within The Dataset, And Finally Combines The Values Into Key-value Pairs.
 - The Key-value Pairs Are Persisted To A Remote PostgreSQL Docker Instance On AWS.
-- The User Is Redirected To A Bar Chart Using D3 That Consumes A JSON API. (The API Reflects The Stored Values In PostgreSQL.)
+- The User Is Then Redirected To A D3 Bar Chart At Which Time Will Consumes A JSON API. (The API Reflects The Stored Values In PostgreSQL.)
