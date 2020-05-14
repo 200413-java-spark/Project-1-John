@@ -13,23 +13,6 @@ public class Application {
     }
 }
 
+//// TODO: 5/9/2020 add proper logging
 
-// logs inputs to jpa database
-//    @Autowired
-//    private SparkRepository sparkRepository;
-//    void repo() {
-//        log.info("inserting -> {}", sparkRepository.save(new SparkModel(45)));
-//        log.info("all {}", sparkRepository.findAll());
-//    }
-
-//allow you to run like a main app
-//public class Application implements CommandLineRunner {
-//    @Override
-//    public void run(String... args) {
-//        log.info("StartApplication...");
-//        log.info("inserting -> {}", sparkRepository.save(new SparkModel(45)));
-//        log.info("all {}", sparkRepository.findAll());
-//    }
-
-//    how to instantiate a log
-
+// TODO: 5/13/2020  maybe thing about refactoring the model so you don't have to drop the table everytime you hit the index

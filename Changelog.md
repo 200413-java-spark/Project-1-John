@@ -1,4 +1,13 @@
 # Changelog
+## Version 1.0.1
+
+### Added
+
+### Changed
+- improved file download with streams.
+
+### Removed
+
 
 ## Version 1.0.0
 

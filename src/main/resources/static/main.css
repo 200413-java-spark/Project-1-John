@@ -3,9 +3,11 @@ body, html {
     height: 100%;
     display: grid;
 }
-.form-control{
+
+.form-control {
     height: calc(1.5em + .75rem + 10px);
 }
+
 form {
     top: 25vh;
 }
@@ -14,7 +16,7 @@ form {
     background-color: #006B38FF;
 }
 
-.container{
+.container {
     margin: auto;
 }
 

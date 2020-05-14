@@ -31,9 +31,9 @@ public class SparkProcess {
     }
 
     private JavaPairRDD<Double, Integer> transformFilter(JavaRDD<String> allRows) {
-        List<String> headers = Arrays.asList(allRows.take(1).get(0).split(","));
-
         String field = "Close";
+
+        List<String> headers = Arrays.asList(allRows.take(1).get(0).split(","));
 
         JavaRDD<String> data = allRows.filter(
                 x -> !(x.split(",")[headers.indexOf(field)])

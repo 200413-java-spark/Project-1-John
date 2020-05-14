@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Component
 public class LoadFile {
@@ -14,15 +16,16 @@ public class LoadFile {
     @Autowired
     SparkProcess sparkProcess;
 
-    public void process(MultipartFile file) {
-        File userFile = new File("C:\\Storage\\" + file.getOriginalFilename());
-        String fileName = userFile.toString();
+    public void process(MultipartFile multipartFile) {
+        String name = multipartFile.getOriginalFilename();
+        String fileName = "C:\\Storage\\" + name;
 
-        try (FileOutputStream fOut = new FileOutputStream(userFile)) {
-            fOut.write(file.getBytes());
-            sparkProcess.spark(fileName);
-        } catch (Exception exe) {
-            exe.printStackTrace();
+        try (BufferedWriter w = Files.newBufferedWriter(Paths.get(fileName))) {
+            w.write(new String(multipartFile.getBytes()));
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+            // TODO: 5/13/2020
         }
+        sparkProcess.spark(fileName);
     }
 }
