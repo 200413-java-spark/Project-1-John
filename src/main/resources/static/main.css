@@ -1,7 +1,7 @@
 body {
     background-color: #F5F5F5;
     overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    /*overflow-x: hidden; !* Hide horizontal scrollbar *!*/
 }
 
 .btn-success {

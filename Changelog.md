@@ -11,6 +11,8 @@
 - Updated Readme Documentation
 - Renamed Sparkprocess To Sparkservice 
 - Removed Comments
+- added some form validation
+- expanded width for larger data
 
 ## Version 1.0.0
 
