@@ -2,7 +2,7 @@
 
 ***Spark Stocks Is An ETL Batch Processor For Historic Ticker Data Served As A Spring Microservice.***
 
-***The Goal Of Spark Stocks Is To Identify Clusters Of Potential Support And Resistance Within The Dataset.***
+***The Goal Of Spark Stocks Is To Identify Clusters Of Potential Support And Resistance Within A Dataset.***
 
 ## Build
 ### Java
@@ -26,14 +26,14 @@ docker run --name mydb -d --rm -p 5432:5432 mydb
 ```
 
 ## Usage
-Upload A File At:
+Upload A File @:
 
 `
 http://localhost:8080/
 `
 
 ## Design
-### Architecture
+### Architecture:
 **Business Logic Layer:**
 - Java
 - Apache Spark
@@ -59,8 +59,7 @@ http://localhost:8080/
 - Tomcat
 - AWS - EC2
 
-### Main Algorithm
-
+### Main Algorithm:
 - The User Uploads A CSV From Yahoo Finance To A Form Styled With Bootstrap 4.
 - The CSV Is Written To Disk On The Server.
 - Spark Reads The File Into Memory, Caches It, Filters The Header, Filters The Unnecessary Columns, Rounds Off All The ‘Close’ Values Within The Dataset, And Finally Combines The Values Into Key-value Pairs.
