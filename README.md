@@ -6,9 +6,11 @@
 
 ## Build
 ### Java
-`
+```
+mvn clean package
 java - jar project-1-john-1.0.1-SNAPSHOT.war
-`
+```
+
 ### DockerFile
 ```
 FROM postgres
@@ -16,8 +18,6 @@ ENV POSTGRES_USER mydb
 ENV POSTGRES_PASSWORD mydb
 EXPOSE 5432
 ```
-
-(You'll Also Need To Change The IP Of The Server In The Application.properties File.)
 
 ### Docker
 ```
