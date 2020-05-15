@@ -33,8 +33,15 @@ http://localhost:8080/
 `
 
 ## Design
-### Architecture:
 
+### Main Algorithm: 
+- The User Uploads A CSV From Yahoo Finance To A Form Styled With Bootstrap 4.
+- The CSV Is Written To Disk On The Server.
+- Spark Reads The File Into Memory, Caches It, Filters The Header, Filters The Unnecessary Columns, Rounds Off All The ‘Close’ Values Within The Dataset, And Finally Combines The Values Into Key-value Pairs.
+- The Key-value Pairs Are Persisted To A Remote PostgreSQL Docker Instance On AWS.
+- The User Is Then Redirected To A D3 Bar Chart At Which Time Will Consumes A JSON API. (The API Reflects The Stored Values In PostgreSQL.)
+
+### Architecture:
 **Business Logic Layer:**
 - Java
 - Apache Spark
@@ -60,11 +67,5 @@ http://localhost:8080/
 - Tomcat
 - AWS - EC2
 
-### Main Algorithm: 
-- The User Uploads A CSV From Yahoo Finance To A Form Styled With Bootstrap 4.
-- The CSV Is Written To Disk On The Server.
-- Spark Reads The File Into Memory, Caches It, Filters The Header, Filters The Unnecessary Columns, Rounds Off All The ‘Close’ Values Within The Dataset, And Finally Combines The Values Into Key-value Pairs.
-- The Key-value Pairs Are Persisted To A Remote PostgreSQL Docker Instance On AWS.
-- The User Is Then Redirected To A D3 Bar Chart At Which Time Will Consumes A JSON API. (The API Reflects The Stored Values In PostgreSQL.)
 
 
