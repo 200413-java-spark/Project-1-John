@@ -2,6 +2,8 @@
 
 ***Spark Stocks Is An ETL Batch Processor For Historic Ticker Data Served As A Spring Microservice.***
 
+https://finance.yahoo.com/
+
 ***The Goal Of Spark Stocks Is To Identify Clusters Of Potential Support And Resistance Within A Dataset.*** 
 
 ## Build
@@ -46,14 +48,13 @@ http://localhost:8080/
 - Java
 - Apache Spark
 - Spring Boot
-- Spring MVC
 
 **Data Access Layer:**
 - PostgreSQL
 - Spring JPA
-- Spring Data
 
 **Presentation Layer:**
+- Spring MVC
 - D3
 - Bootstrap 4
 - JavaScript
@@ -66,6 +67,3 @@ http://localhost:8080/
 - JUnit
 - Tomcat
 - AWS - EC2
-
-
-
