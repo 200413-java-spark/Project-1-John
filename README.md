@@ -43,7 +43,7 @@ http://localhost:8080/
 - The Key-value Pairs Are Persisted To A Remote PostgreSQL Docker Instance On AWS.
 - The User Is Then Redirected To A D3 Bar Chart At Which Time Will Consumes A JSON API. (The API Reflects The Stored Values In PostgreSQL.)
 
-### Architecture:
+### Tech Stack:
 **Business Logic Layer:**
 - Java
 - Apache Spark
