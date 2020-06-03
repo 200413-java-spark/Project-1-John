@@ -44,16 +44,16 @@ http://localhost:8080/
 - The User Is Then Redirected To A D3 Bar Chart At Which Time Will Consumes A JSON API. (The API Reflects The Stored Values In PostgreSQL.)
 
 ### Architecture:
-**Business Logic Layer:**
+**Business Layer:**
 - Java
 - Apache Spark
-- Spring Boot
 
-**Data Access Layer:**
+**Data Layer:**
 - PostgreSQL
 - Spring JPA
 
 **Presentation Layer:**
+- Spring Boot
 - Spring MVC
 - D3
 - Bootstrap 4
